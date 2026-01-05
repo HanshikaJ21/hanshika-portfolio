@@ -1,0 +1,188 @@
+.navbar {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92%;
+  max-width: 1120px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.75),
+    rgba(255,255,255,0.55)
+  );
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  padding: 10px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 1000;
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+
+  transition: all 0.35s ease;
+}
+
+/* Avatar */
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+}
+
+/* Center Nav */
+.nav-center {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  padding: 6px;
+  margin: 0;
+
+  background: rgba(0,0,0,0.03);
+  border-radius: 999px;
+}
+
+/* Nav Items */
+.nav-center li {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  cursor: pointer;
+
+  padding: 8px 18px;
+  border-radius: 999px;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.25s ease;
+}
+
+.nav-center li:hover {
+  color: var(--primary);
+  transform: translateY(-1px);
+}
+
+/* Active – Karan-style pill */
+.nav-center li.active {
+  background: var(--primary);
+  color: #000;
+  font-weight: 600;
+
+  box-shadow:
+    0 6px 20px rgba(255, 200, 61, 0.45);
+}
+
+/* Right */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Resume Button */
+.resume-btn {
+  background: #000;
+  color: #fff;
+  padding: 9px 18px;
+  border-radius: 999px;
+
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+
+  transition:
+    background 0.3s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.resume-btn:hover {
+  background: #111;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+/* 🌙 Dark Mode */
+[data-theme="dark"] .navbar {
+  background: linear-gradient(
+    180deg,
+    rgba(18,18,18,0.75),
+    rgba(18,18,18,0.6)
+  );
+  border-color: rgba(255,255,255,0.08);
+  box-shadow:
+    0 12px 40px rgba(0,0,0,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+[data-theme="dark"] .nav-center {
+  background: rgba(255,255,255,0.05);
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .nav-center {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 8px 14px;
+  }
+
+  .resume-btn {
+    padding: 7px 14px;
+    font-size: 13px;
+  }
+}
+/* Reset anchor default styles */
+.nav-center a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  font-size: 14px;
+
+  padding: 8px 18px;
+  border-radius: 999px;
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease;
+}
+
+/* Hover state */
+.nav-center a:hover {
+  color: var(--primary);
+}
+
+/* Active pill (when li has active class) */
+.nav-center li.active a {
+  background: var(--primary);
+  color: #000;
+  font-weight: 600;
+}
+
+/* 🌞 Light theme */
+[data-theme="light"] .nav-center a {
+  color: #000;
+}
+
+/* 🌙 Dark theme */
+[data-theme="dark"] .nav-center a {
+  color: #fff;
+}

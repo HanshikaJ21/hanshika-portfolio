@@ -1,0 +1,35 @@
+/* ===== ABOUT SECTION ===== */
+.about {
+  width: 100%;
+  padding: 120px 0;
+}
+
+/* CENTERED CONTAINER */
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 8vw;
+}
+
+/* HEADING */
+.about h2 {
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 56px;
+  color: var(--text-primary);
+}
+
+/* LINE BASE */
+.about-line {
+  font-size: 22px;
+  line-height: 1.7;
+  margin-bottom: 36px;
+
+  /* scroll driven */
+  opacity: 0.15;
+  transform: translateY(32px);
+
+  color: var(--text-muted);
+
+  will-change: transform, opacity, color;
+}
