@@ -1,10 +1,23 @@
 import { useRef } from "react";
 import "../styles/projects-slider.css";
+import growwclone from "../assets/groww_clone.png";
 
 const dummyProjects = [
-  { id: 1, title: "Project One", img: "https://picsum.photos/600/400?1" },
-  { id: 2, title: "Project Two", img: "https://picsum.photos/600/400?2" },
-  { id: 3, title: "Project Three", img: "https://picsum.photos/600/400?3" },
+  {
+    id: 1,
+    title: "Groww Clone",
+    img: growwclone,
+  },
+  {
+    id: 2,
+    title: "Project Two",
+    img: "https://picsum.photos/600/400?2",
+  },
+  {
+    id: 3,
+    title: "Project Three",
+    img: "https://picsum.photos/600/400?3",
+  },
 ];
 
 export default function ProjectsSlider() {
@@ -27,15 +40,16 @@ export default function ProjectsSlider() {
   const resetParallax = (index) => {
     const card = cardsRef.current[index];
     if (!card) return;
-    card.style.transform = "translate(0px, 0px) scale(1)";
+
+    card.style.transform = "translate(0, 0) scale(1)";
   };
 
   return (
-    <section className="projects-slider">
+    <section className="projects-slider" id="projects">
       <div className="slider-track">
         {[...dummyProjects, ...dummyProjects].map((project, index) => (
           <div
-            key={index}
+            key={`${project.id}-${index}`}
             className="project-card"
             ref={(el) => (cardsRef.current[index] = el)}
             onMouseMove={(e) => handleMouseMove(e, index)}
