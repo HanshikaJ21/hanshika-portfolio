@@ -181,29 +181,45 @@
 }
 
 .socials a {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  border: 1px solid var(--border);
+  border: 1.5px solid var(--border);
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   color: var(--text);
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: 600;
+
+  background: transparent;
+  opacity: 0.9;
 
   transition: all 0.3s ease;
 }
 
+/* Hover effect */
 .socials a:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px) scale(1.05);
   background: var(--primary);
+  border-color: var(--primary);
   color: #000;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
 }
 
 /* Dark mode tweak */
+[data-theme="dark"] .socials a {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
 [data-theme="dark"] .socials a:hover {
   color: #000;
+}
+.socials svg {
+  stroke-width: 1.8;
+}
+.socials a:hover svg {
+  stroke-width: 2.2;
 }
