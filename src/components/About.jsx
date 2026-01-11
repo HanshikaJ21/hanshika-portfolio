@@ -35,9 +35,13 @@ export default function About() {
         <h2>About Me</h2>
 
         {[
-          "What's up? I'm a full-stack dev who loves building clean, scalable products.",
-          "I've shipped real-world apps across stacks that people actually use.",
-          "When I'm not coding, I'm investing in growth — mentally, physically, creatively."
+          "I'm Hanshika Jasuja, a passionate full-stack developer with 1.5 years of experience in crafting clean and scalable web applications.",
+          "My journey in tech began with a curiosity for how things work, leading me to explore various programming languages and frameworks.",
+          "I specialize in building user-friendly interfaces and robust backend systems, ensuring seamless performance across platforms.",
+          "When I'm not coding, I enjoy exploring new technologies, contributing to open-source projects, and collaborating with fellow developers to create innovative solutions.",
+          "Currently, I’m expanding my expertise in AI and Machine Learning, exploring how intelligent systems can enhance user experiences and data-driven decision-making.",
+          "Curious by nature and detail-oriented in execution, I believe great products are built at the intersection of thoughtful design, solid engineering, and continuous learning.",
+          "Let’s connect and build something extraordinary together!",
         ].map((text, i) => (
           <p
             key={i}
