@@ -14,7 +14,7 @@
   will-change: transform;
 }
 
-/* Pause on hover */
+/* Pause animation on hover */
 .projects-slider:hover .slider-track {
   animation-play-state: paused;
 }
@@ -32,7 +32,7 @@
 /* PROJECT CARD */
 .project-card {
   min-width: 420px;
-  height: 260px;
+  height: auto;                /* 🔑 let content define height */
   border-radius: 28px;
   overflow: hidden;
   position: relative;
@@ -41,28 +41,43 @@
   cursor: pointer;
   transition: transform 0.25s ease-out;
   will-change: transform;
+  padding-bottom: 16px;        /* space for title */
 }
 
-/* IMAGE */
+/* IMAGE — FIXED HEIGHT (RECTANGLE) */
 .project-card img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: 180px;               /* ✅ rectangle */
+  object-fit: cover;           /* 🔥 no distortion */
+  border-radius: 22px 22px 0 0;
+  display: block;
 }
 
 /* TITLE */
 .project-card h3 {
-  position: absolute;
-  bottom: 20px;
-  left: 24px;
+  margin: 14px 20px 0;
   color: #fff;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
-  pointer-events: none;
 }
-.project-card img {
-  width: 100%;
-  height: 180px;           /* 🔑 forces rectangle */
-  object-fit: cover;       /* 🔥 crops nicely */
-  border-radius: 14px;
+
+/* Hover lift */
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+/* MOBILE TWEAKS */
+@media (max-width: 768px) {
+  .slider-track {
+    padding-left: 24px;
+    gap: 20px;
+  }
+
+  .project-card {
+    min-width: 300px;
+  }
+
+  .project-card img {
+    height: 160px;
+  }
 }
