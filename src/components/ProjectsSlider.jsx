@@ -1,12 +1,12 @@
 import { useRef } from "react";
 import "../styles/projects-slider.css";
-import growwclone from "../assets/groww_clone.png";
+import growwclone from "../assets/groww_Clone.png";
 
 const dummyProjects = [
   {
     id: 1,
     title: "Groww Clone",
-    img: growwclone,
+    img: growwClone,
   },
   {
     id: 2,
@@ -19,6 +19,7 @@ const dummyProjects = [
     img: "https://picsum.photos/600/400?3",
   },
 ];
+
 
 export default function ProjectsSlider() {
   const cardsRef = useRef([]);
