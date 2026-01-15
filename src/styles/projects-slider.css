@@ -4,22 +4,21 @@
   position: relative;
 }
 
-/* SLIDING BELT */
+/* 🔁 AUTO SLIDING BELT */
 .slider-track {
   display: flex;
   gap: 32px;
   width: max-content;
   padding-left: 80px;
-  animation: slide 30s linear infinite;
-  will-change: transform;
+  animation: slide 35s linear infinite;
 }
 
-/* Pause animation on hover */
+/* pause on hover */
 .projects-slider:hover .slider-track {
   animation-play-state: paused;
 }
 
-/* Infinite motion */
+/* animation */
 @keyframes slide {
   from {
     transform: translateX(0);
@@ -29,55 +28,50 @@
   }
 }
 
-/* PROJECT CARD */
+/* 🧱 CARD */
 .project-card {
-  min-width: 420px;
-  height: auto;                /* 🔑 let content define height */
+  width: 320px;
+  height: 320px;
+  background: #fff;
   border-radius: 28px;
   overflow: hidden;
-  position: relative;
   flex-shrink: 0;
-  background: #111;
-  cursor: pointer;
-  transition: transform 0.25s ease-out;
-  will-change: transform;
-  padding-bottom: 16px;        /* space for title */
+  transition: transform 0.3s ease;
 }
 
-/* IMAGE — FIXED HEIGHT (RECTANGLE) */
-.project-card img {
-  width: 100%;
-  height: 180px;               /* ✅ rectangle */
-  object-fit: cover;           /* 🔥 no distortion */
-  border-radius: 22px 22px 0 0;
-  display: block;
-}
-
-/* TITLE */
-.project-card h3 {
-  margin: 14px 20px 0;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 500;
-}
-
-/* Hover lift */
+/* ✨ subtle hover */
 .project-card:hover {
   transform: translateY(-6px);
 }
 
-/* MOBILE TWEAKS */
-@media (max-width: 768px) {
-  .slider-track {
-    padding-left: 24px;
-    gap: 20px;
-  }
-
-  .project-card {
-    min-width: 300px;
-  }
-
-  .project-card img {
-    height: 160px;
-  }
+/* 🖼️ IMAGE AREA */
+.project-image {
+  height: 190px; /* ⭐ KEY: image height */
+  width: 100%;
+  overflow: hidden;
 }
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 🔥 NO CROP */
+  background: #f5f5f5; /* clean fallback */
+}
+
+/* 📝 CONTENT */
+.project-content {
+  padding: 18px 22px;
+}
+
+.project-content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111;
+}
+
+.project-content p {
+  font-size: 14px;
+  color: #666;
+  margin-top: 6px;
+}
+  

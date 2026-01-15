@@ -1,6 +1,8 @@
 import { useRef } from "react";
 import "../styles/projects-slider.css";
 import growwclone from "../assets/groww_Clone.png";
+import ecommerce from "../assets/ecommerce.png";
+import ai from "../assets/ai_based.png";
 
 const dummyProjects = [
   {
@@ -10,16 +12,15 @@ const dummyProjects = [
   },
   {
     id: 2,
-    title: "Project Two",
-    img: "https://picsum.photos/600/400?2",
+    title: "E-commerce Website",
+    img: ecommerce,
   },
   {
     id: 3,
-    title: "Project Three",
-    img: "https://picsum.photos/600/400?3",
+    title: "AI-Powered Application",
+    img: ai,
   },
 ];
-
 
 export default function ProjectsSlider() {
   const cardsRef = useRef([]);
@@ -56,8 +57,15 @@ export default function ProjectsSlider() {
             onMouseMove={(e) => handleMouseMove(e, index)}
             onMouseLeave={() => resetParallax(index)}
           >
-            <img src={project.img} alt={project.title} />
-            <h3>{project.title}</h3>
+            {/* IMAGE */}
+            <div className="project-image">
+              <img src={project.img} alt={project.title} />
+            </div>
+
+            {/* CONTENT */}
+            <div className="project-content">
+              <h3>{project.title}</h3>
+            </div>
           </div>
         ))}
       </div>
