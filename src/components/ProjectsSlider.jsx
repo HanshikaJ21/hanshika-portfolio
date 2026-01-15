@@ -6,7 +6,7 @@ const dummyProjects = [
   {
     id: 1,
     title: "Groww Clone",
-    img: growwClone,
+    img: growwclone,
   },
   {
     id: 2,
